@@ -49,7 +49,7 @@ aliview mapped/genome_alin.fasta ;
 ```
 
 ## qualimap report
-download source: http://qualimap.conesalab.org/ 
+download qualimap from http://qualimap.conesalab.org/, uncompress and paste in working directory
 ```r
 #1#set names#
 for r1 in *mapped.bam
