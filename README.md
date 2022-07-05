@@ -44,3 +44,18 @@ cat mapped/*.fa > mapped/genomes.fasta ;
 aliview mapped/genomes.fasta ;
 mafft --thread 15 --addfragments mapped/genomes.fasta --adjustdirection --auto --inputorder NC_063383.1.fasta > mapped/genomes_alin.fasta ;
 aliview mapped/genome_alin.fasta ;
+```
+
+## qualimap report
+download source: http://qualimap.conesalab.org/ 
+```r
+#1#set names#
+for r1 in *mapped.bam
+do
+prefix=$(basename $r1 .mapped.bam)
+
+#2# instrucciones para generar el archivo .bam#
+./qualimap bamqc -bam $r1 -outfile ${prefix}.pdf ; 
+mv ${prefix}.mapped_stats/${prefix}.pdf . ;
+done ; 
+```
