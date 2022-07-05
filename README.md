@@ -7,7 +7,7 @@ cd $HOME && touch script.sh && chmod +x script.sh ;
 cd $HOME && echo '#!/bin/bash' > script.sh && echo '# -*- ENCODING: UTF-8 -*-' >> script.sh ;
 ```
 
-## copy and paste the following code in the .sh file
+## STEP 1 : copy and paste the following code in the .sh file
 ```r
 #1#indexado y alineado con el genoma de referencia#
 bwa index NC_063383.1.fasta ; 
@@ -46,7 +46,7 @@ cat mapped/*.fa > mapped/genomes.fasta ;
 aliview mapped/genomes.fasta ;
 ```
 
-## count Ns for every genome
+## STEP 2: count Ns for every genome
 ```r
 #1#set names#
 for r1 in *fa
@@ -59,7 +59,7 @@ done ;
 cat *_count.txt > n_count.txt ;
 ```
 
-## qualimap report
+## STEP 3: qualimap report
 download qualimap from http://qualimap.conesalab.org/, uncompress and paste in working directory
 ```r
 #1#set names#
@@ -73,7 +73,7 @@ mv ${prefix}.mapped_stats/${prefix}.pdf . ;
 done ; 
 ```
 
-## repeat ivar with m = 5
+## STEP 4: repeat ivar with m = 5
 ```r
 #1#set names#
 for r1 in *bam
@@ -82,4 +82,5 @@ prefix=$(basename $r1 .bam)
 #2#estimate Ns#
 samtools mpileup -aa -A -d 0 -Q 0 $r1 | ivar consensus -p ${prefix}.fasta -q 25 -t 0.6 -m 5 ;
 done ; 
+## Repeat STEP 2
 ```
