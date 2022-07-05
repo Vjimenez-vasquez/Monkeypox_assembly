@@ -1,7 +1,7 @@
 # Monkeypox_assembly
 collection of codes for monkeypox genome assembly
 
-## STEP 0:Just in case generate a naked script.sh file
+## STEP 0: just in case generate a naked script.sh file
 ```r
 cd $HOME && touch script.sh && chmod +x script.sh ;
 cd $HOME && echo '#!/bin/bash' > script.sh && echo '# -*- ENCODING: UTF-8 -*-' >> script.sh ;
