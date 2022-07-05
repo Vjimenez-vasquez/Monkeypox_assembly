@@ -48,6 +48,19 @@ mafft --thread 15 --addfragments mapped/genomes.fasta --adjustdirection --auto -
 aliview mapped/genome_alin.fasta ;
 ```
 
+## count Ns for every genome
+```r
+#1#set names#
+for r1 in *fa
+do
+prefix=$(basename $r1 .fa)
+#2#estimate Ns#
+seqtk comp $r1 | awk '{x=$3+$4+$5+$6;y=$2;print $1,y-x,y,(y-x)/y}' > ${prefix}_count.txt ;
+done ; 
+#3#merge data#
+cat *_count.txt > n_count.txt ;
+```
+
 ## qualimap report
 download qualimap from http://qualimap.conesalab.org/, uncompress and paste in working directory
 ```r
