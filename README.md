@@ -1,13 +1,13 @@
 # Monkeypox_assembly
 collection of codes for monkeypox genome assembly
 
-## Just in case generate a naked script.sh file
+## STEP 0:Just in case generate a naked script.sh file
 ```r
 cd $HOME && touch script.sh && chmod +x script.sh ;
 cd $HOME && echo '#!/bin/bash' > script.sh && echo '# -*- ENCODING: UTF-8 -*-' >> script.sh ;
 ```
 
-## STEP 1 : copy and paste the following code in the .sh file
+## STEP 1: copy and paste the following code in the .sh file
 ```r
 #1#indexado y alineado con el genoma de referencia#
 bwa index NC_063383.1.fasta ; 
