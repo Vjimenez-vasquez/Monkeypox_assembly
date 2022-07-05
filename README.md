@@ -44,8 +44,6 @@ mkdir mapped ;
 mv *.mapped.bam *.fa *.fq *.mapped.bam.bai mapped/ ;
 cat mapped/*.fa > mapped/genomes.fasta ; 
 aliview mapped/genomes.fasta ;
-mafft --thread 15 --addfragments mapped/genomes.fasta --adjustdirection --auto --inputorder NC_063383.1.fasta > mapped/genomes_alin.fasta ;
-aliview mapped/genome_alin.fasta ;
 ```
 
 ## count Ns for every genome
