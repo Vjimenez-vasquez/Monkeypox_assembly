@@ -56,7 +56,7 @@ for r1 in *mapped.bam
 do
 prefix=$(basename $r1 .mapped.bam)
 
-#2# instrucciones para generar el archivo .bam#
+#2# correr qualimap para cada *.bam#
 ./qualimap bamqc -bam $r1 -outfile ${prefix}.pdf ; 
 mv ${prefix}.mapped_stats/${prefix}.pdf . ;
 done ; 
