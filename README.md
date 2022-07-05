@@ -9,7 +9,9 @@ cd $HOME && echo '#!/bin/bash' > script.sh && echo '# -*- ENCODING: UTF-8 -*-' >
 
 ## copy and paste the following code in the .sh file
 ```r
-#1#alineado con el genoma de referencia#
+#1#indexado y alineado con el genoma de referencia#
+samtools index NC_063383.1.fasta ; 
+#ojo: para genomas codificados como CODIGO_INS_1.fastq.gz y CODIGO_INS_2.fastq.gz#
 for r1 in *fastq.gz
 do
 prefix=$(basename $r1 _1.fastq.gz)
