@@ -72,3 +72,14 @@ prefix=$(basename $r1 .mapped.bam)
 mv ${prefix}.mapped_stats/${prefix}.pdf . ;
 done ; 
 ```
+
+## repeat ivar with m = 5
+```r
+#1#set names#
+for r1 in *bam
+do
+prefix=$(basename $r1 .bam)
+#2#estimate Ns#
+samtools mpileup -aa -A -d 0 -Q 0 $r1 | ivar consensus -p ${prefix}.fasta -q 25 -t 0.6 -m 20 ;
+done ; 
+```
