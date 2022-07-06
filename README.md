@@ -5,6 +5,7 @@ collection of codes for monkeypox genome assembly
 ```r
 cd $HOME && touch script.sh && chmod +x script.sh ;
 cd $HOME && echo '#!/bin/bash' > script.sh && echo '# -*- ENCODING: UTF-8 -*-' >> script.sh ;
+mv script.sh paste/your/working/directory/ ;
 ```
 
 ## STEP 1: copy and paste the following code in the .sh file adding "exit" in the last line
