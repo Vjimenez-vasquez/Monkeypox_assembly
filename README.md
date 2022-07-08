@@ -31,7 +31,7 @@ samtools index -@ 15 ${prefix}.bam ;
 rm *_uno.bam *_uno.sam *_unoa.bam *_dosa.bam *_tresa.bam *_cuatroa.bam ;
 
 #4#obtencion del genoma consenso#
-samtools mpileup -aa -A -d 0 -Q 0 ${prefix}.bam | ivar consensus -p ${prefix}.fasta -q 25 -t 0.6 -m 20 ; 
+samtools mpileup -aa -A -d 0 -Q 0 ${prefix}.bam | ivar consensus -p ${prefix}.fasta -q 25 -t 0.6 -m 10 ; 
 
 #5#obtencion de: 1)archivos bam condormado por solo reads mapeados y 2) fastq files "f" y "r" de estos reads mapeadoa#
 samtools view -b -F 4 ${prefix}.bam > ${prefix}.mapped.bam ; 
